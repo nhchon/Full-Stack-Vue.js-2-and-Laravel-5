@@ -9,6 +9,17 @@ var app = new Vue({
 		},
 		amenities: sample.amenities,
 		prices: sample.prices,
-		contracted: true
+		contracted: true,
+		modalOpen: false
+	},
+	watch: {
+		modalOpen: function() {
+			var className = 'modal-open';
+			if (this.modalOpen) {
+				document.body.classList.add(className);
+			} else {
+				document.body.classList.remove(className);
+			}
+		}
 	}
 });
